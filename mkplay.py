@@ -17,7 +17,7 @@ BG_COLOUR = (12, 27, 51)
 TEXT_COLOUR = (255, 255, 255)
 
 """URL to tagging api (tagzen)"""
-API_TAG_URL = "http://localhost:8000"
+API_TAG_URL = "https://tagzen.ogriffiths.com"
 
 """Starting position of song in pixels away from the left"""
 SONG_X_POS = 300
