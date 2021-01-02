@@ -2,6 +2,12 @@
 
 Extendible video playlist visualiser
 
+## In action
+
+![Player image 1](./examples/eg1.png)
+![Player image 2](./examples/eg2.png)
+![Command-line use](./examples/eg3.png)
+
 ## About
 
 Once music is added to the `music/` directory beside the script, you may run `mkplay.py` and it will automatically generate a mp4 playlist video for you, containing all the songs from the directory like magic 🌠
@@ -9,12 +15,6 @@ Once music is added to the `music/` directory beside the script, you may run `mk
 This script was designed to handle many naming conventions so `THIS.IS-A VALID   name.mp3` is easily understood. Metadata helps the process and is automatically picked up but in order to keep a specific ordering of a playlist, you may use `0`, `1`, `2`, etc at the start of the tracks (as long as the metadata does not contain this).
 
 Please note that an internet connection is required to use this script as it uses my local [tagzen](https://github.com/owez/tagzen) instance for better quality song metadata.
-
-## In action
-
-![Player image 1](./examples/eg1.png)
-![Player image 2](./examples/eg2.png)
-![Command-line use](./examples/eg3.png)
 
 ## Installation
 
