@@ -54,7 +54,7 @@ class Song:
         payload = {
             "name": f"{audio.title}{path.suffix}"
             if audio.title and path.suffix
-            else path
+            else path.name
         }
 
         if audio.artist:
@@ -121,15 +121,15 @@ for file in sorted(files):
     songs.append(Song(image_path))
 
 title_font = ImageFont.truetype(
-    "/usr/share/fonts/truetype/hack/Hack-Bold.ttf", 75, encoding="unic"
+    "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf", 75, encoding="unic"
 )
 
 body_font = ImageFont.truetype(
-    "/usr/share/fonts/truetype/hack/Hack-Regular.ttf", 40, encoding="unic"
+    "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf", 40, encoding="unic"
 )
 
-body_bold_font = ImageFont.truetype(
-    "/usr/share/fonts/truetype/hack/Hack-Bold.ttf", 55, encoding="unic"
+arrow_font = ImageFont.truetype(
+    "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf", 55, encoding="unic"
 )
 
 
@@ -164,7 +164,7 @@ for active_ind, song_active in enumerate(songs):
                 (SONG_X_POS - 65, song_h - 11.5),
                 ACTIVE_SYMBOL,
                 TEXT_COLOUR,
-                font=body_bold_font,
+                font=arrow_font,
             )
 
     song_active.image_path = TMP_PATH / Path(f"{active_ind}.png")
@@ -185,7 +185,7 @@ for song in songs:
     videostream.append(ffmpeg.input(str(song.image_path)))
     videostream.append(ffmpeg.input(str(song.file_path)))
 
-ffmpeg.concat(*videostream, v=1, a=1).output(str(PLAYLIST_PATH), r=0.5, ab=256000).run()
+ffmpeg.concat(*videostream, v=1, a=1).output(str(PLAYLIST_PATH), r=5, ab=256000).run()
 
 if TMP_PATH.exists():
     logging.info(f"Deleting '{TMP_PATH}' temp directory ..")
