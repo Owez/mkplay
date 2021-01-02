@@ -4,6 +4,10 @@ Extendible video playlist visualiser
 
 ## In action
 
+- Real world usage: [Link](https://www.youtube.com/watch?v=5kCtzdOUTFw)
+
+Local screenshots:
+
 ![Player image 1](./examples/eg1.png)
 ![Player image 2](./examples/eg2.png)
 ![Command-line use](./examples/eg3.png)
