@@ -20,13 +20,13 @@ TEXT_COLOUR = (255, 255, 255)
 API_TAG_URL = "https://tagzen.ogriffiths.com"
 
 """Starting position of song in pixels away from the left"""
-SONG_X_POS = 300
+SONG_X_POS = 175
 
 """Starting position of song in pixels away from the top"""
-SONG_Y_POS = 300
+SONG_Y_POS = 450
 
 """Optional additional spacing for the y position of the song away from other songs"""
-SONG_Y_SPACING = 0
+SONG_Y_SPACING = -15
 
 """Symbol to use for the active song"""
 ACTIVE_SYMBOL = "→"
@@ -125,11 +125,11 @@ title_font = ImageFont.truetype(
 )
 
 body_font = ImageFont.truetype(
-    "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf", 40, encoding="unic"
+    "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf", 23, encoding="unic"
 )
 
 arrow_font = ImageFont.truetype(
-    "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf", 55, encoding="unic"
+    "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf", 33, encoding="unic"
 )
 
 
@@ -185,7 +185,7 @@ for song in songs:
     videostream.append(ffmpeg.input(str(song.image_path)))
     videostream.append(ffmpeg.input(str(song.file_path)))
 
-ffmpeg.concat(*videostream, v=1, a=1).output(str(PLAYLIST_PATH), r=5, ab=256000).run()
+ffmpeg.concat(*videostream, v=1, a=1).output(str(PLAYLIST_PATH), r=1, ab=256000).run()
 
 if TMP_PATH.exists():
     logging.info(f"Deleting '{TMP_PATH}' temp directory ..")

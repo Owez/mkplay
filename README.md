@@ -4,7 +4,7 @@ Extendible video playlist visualiser
 
 ## In action
 
-- Real world usage: [Link](https://www.youtube.com/watch?v=5kCtzdOUTFw)
+- Real world usage: [Link](https://www.youtube.com/watch?v=Sl3XgtKYq4E)
 
 Local screenshots:
 
